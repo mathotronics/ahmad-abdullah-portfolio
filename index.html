@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ahmad Abdullah | STEM Education Specialist</title>
+  <meta name="description" content="Portfolio of Ahmad Abdullah, STEM Education Specialist, Math Teacher, Arduino curriculum creator, and hands-on STEM project designer." />
+  <style>
+    :root {
+      --navy: #0f2742;
+      --blue: #123b63;
+      --teal: #10a6a6;
+      --green: #4caf50;
+      --light: #f5f8fb;
+      --white: #ffffff;
+      --gray: #5f6f7f;
+      --dark: #1d2935;
+      --line: #d9e4ec;
+      --shadow: 0 18px 45px rgba(15, 39, 66, 0.13);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; line-height: 1.6; color: var(--dark); background: var(--light); }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1120px, 92%); margin: 0 auto; }
+
+    header { background: rgba(255, 255, 255, 0.94); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 20; }
+    .nav { min-height: 74px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .brand { font-weight: 800; font-size: 1.05rem; color: var(--navy); letter-spacing: 0.2px; }
+    .brand span { color: var(--teal); }
+    nav { display: flex; align-items: center; gap: 22px; font-size: 0.94rem; color: var(--gray); }
+    nav a:hover { color: var(--teal); }
+
+    .hero { position: relative; overflow: hidden; padding: 86px 0 72px; background: radial-gradient(circle at top right, rgba(16, 166, 166, 0.20), transparent 35%), linear-gradient(135deg, var(--navy), var(--blue)); color: var(--white); }
+    .hero::after { content: ""; position: absolute; width: 440px; height: 440px; border: 1px solid rgba(255,255,255,0.14); border-radius: 50%; right: -160px; bottom: -200px; }
+    .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 46px; align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); padding: 8px 14px; border-radius: 999px; font-size: 0.9rem; margin-bottom: 22px; }
+    h1 { font-size: clamp(2.6rem, 6vw, 5rem); line-height: 1.02; margin-bottom: 20px; letter-spacing: -1.5px; }
+    .hero h2 { font-size: clamp(1.15rem, 2vw, 1.6rem); font-weight: 500; color: #d7f5f4; margin-bottom: 22px; }
+    .hero p { font-size: 1.08rem; color: #eaf3f8; max-width: 680px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 32px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 0 20px; border-radius: 999px; font-weight: 700; transition: transform 0.2s ease, box-shadow 0.2s ease; }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0,0,0,0.15); }
+    .btn-primary { background: var(--teal); color: var(--white); }
+    .btn-secondary { background: rgba(255,255,255,0.12); color: var(--white); border: 1px solid rgba(255,255,255,0.25); }
+    .hero-photo-card { background: rgba(255,255,255,0.11); border: 1px solid rgba(255,255,255,0.18); border-radius: 30px; padding: 14px; box-shadow: 0 20px 40px rgba(0,0,0,0.13); }
+    .hero-photo-card img { width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: center; border-radius: 22px; }
+
+    section { padding: 74px 0; }
+    .section-heading { display: flex; justify-content: space-between; gap: 24px; align-items: end; margin-bottom: 34px; }
+    .section-heading h2 { color: var(--navy); font-size: clamp(1.9rem, 4vw, 2.7rem); line-height: 1.12; letter-spacing: -0.7px; }
+    .section-heading p { color: var(--gray); max-width: 520px; }
+
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; gap: 28px; align-items: stretch; }
+    .profile-box { background: var(--navy); color: var(--white); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+    .profile-box h3 { font-size: 1.45rem; margin-bottom: 8px; }
+    .profile-box p { color: #dcebf4; }
+    .profile-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+    .profile-tag { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.18); border-radius: 999px; padding: 6px 10px; font-size: 0.85rem; }
+    .about-text { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: var(--shadow); }
+    .about-text p + p { margin-top: 16px; }
+
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; box-shadow: var(--shadow); }
+    .icon { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: #e7f7f7; color: var(--teal); font-size: 1.35rem; margin-bottom: 18px; }
+    .card h3 { color: var(--navy); margin-bottom: 10px; font-size: 1.18rem; }
+    .card p { color: var(--gray); font-size: 0.98rem; }
+
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .project-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .project-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: center; border-bottom: 1px solid var(--line); }
+    .project-body { padding: 22px; }
+    .project-body h3 { color: var(--navy); font-size: 1.18rem; margin-bottom: 9px; }
+    .project-body p { color: var(--gray); margin-bottom: 16px; font-size: 0.95rem; }
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { background: #eef5f8; color: var(--blue); padding: 6px 10px; border-radius: 999px; font-size: 0.82rem; font-weight: 700; }
+
+    .banner { background: var(--navy); color: var(--white); border-radius: 30px; padding: 42px; box-shadow: var(--shadow); display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 28px; align-items: center; }
+    .banner h2 { font-size: clamp(1.9rem, 4vw, 3rem); line-height: 1.08; margin-bottom: 14px; }
+    .banner p { color: #dcebf4; }
+
+    .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .contact-item { background: var(--white); border: 1px solid var(--line); border-radius: 18px; padding: 22px; box-shadow: var(--shadow); }
+    .contact-item small { color: var(--gray); display: block; margin-bottom: 6px; }
+    .contact-item strong { color: var(--navy); word-break: break-word; }
+
+    footer { background: var(--navy); color: #dcebf4; padding: 30px 0; text-align: center; font-size: 0.92rem; }
+
+    @media (max-width: 980px) {
+      nav { display: none; }
+      .hero-grid, .about-grid, .banner { grid-template-columns: 1fr; }
+      .cards, .project-grid, .contact-grid { grid-template-columns: 1fr; }
+      .section-heading { display: block; }
+      .section-heading p { margin-top: 12px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Ahmad <span>Abdullah</span></a>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#projects">Projects</a>
+        <a href="#resources">Resources</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">STEM Education • Mathematics • Arduino Learning</div>
+          <h1>Ahmad Abdullah</h1>
+          <h2>STEM Education Specialist, Math Teacher, and Arduino Curriculum Creator</h2>
+          <p>
+            I design hands-on learning experiences that connect mathematics, coding, electronics, robotics, and engineering.
+            My work helps students understand abstract concepts through real projects, practical challenges, and creative problem solving.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View My Projects</a>
+            <a class="btn btn-secondary" href="mailto:A.Abdullah1111@hotmail.com">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo-card">
+          <img src="assets/ahmad-abdullah.jpg" alt="Ahmad Abdullah, STEM Education Specialist and Arduino educator" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container about-grid">
+        <div class="profile-box">
+          <h3>About Ahmad</h3>
+          <p>
+            Math teacher and STEM educator focused on making learning clear, practical, and engaging for students through Arduino, robotics, and project-based learning.
+          </p>
+          <div class="profile-tags">
+            <span class="profile-tag">Mathematics</span>
+            <span class="profile-tag">Arduino</span>
+            <span class="profile-tag">STEM</span>
+            <span class="profile-tag">Wedo 2.0</span>
+            <span class="profile-tag">Curriculum Design</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <p>
+            I am Ahmad Abdullah, a STEM Education Specialist and Mathematics Teacher with a passion for combining engineering,
+            coding, electronics, robotics, and mathematics into meaningful classroom experiences. I believe students learn deeply when they
+            build, test, discuss, and improve real projects.
+          </p>
+          <p>
+            My teaching approach is structured, student-centered, and practical. I create lessons that move from clear explanations
+            to guided practice and then to hands-on application. Through Arduino projects, Wedo 2.0 robotics activities, STEM challenges,
+            and math-based investigations, I help students connect what they learn to real-world systems.
+          </p>
+          <p>
+            Through Math-O-Tronics, I develop classroom-ready resources for teachers who want to bring interactive STEM learning
+            into their classrooms without losing clarity, organization, or curriculum focus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I Do</h2>
+          <p>My work focuses on building bridges between mathematics, technology, and hands-on learning.</p>
+        </div>
+        <div class="cards">
+          <article class="card"><div class="icon">∑</div><h3>Mathematics Teaching</h3><p>I teach math using clear explanations, visual models, practice routines, and real-life problem solving to help students build confidence.</p></article>
+          <article class="card"><div class="icon">⚙</div><h3>Arduino & Electronics</h3><p>I design Arduino activities where students learn inputs, outputs, sensors, circuits, coding logic, and engineering design.</p></article>
+          <article class="card"><div class="icon">✦</div><h3>STEM Curriculum Design</h3><p>I create structured resources for teachers, including project guides, worksheets, task cards, answer keys, and extension challenges.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Featured Projects</h2>
+          <p>Hands-on STEM projects that combine student creativity, coding, electronics, robotics, and real-world problem solving.</p>
+        </div>
+        <div class="project-grid">
+          <article class="project-card">
+            <img src="assets/smart-bin.jpg" alt="Smart Bin Arduino STEM project" />
+            <div class="project-body"><h3>Smart Bin</h3><p>An Arduino project where students explore sensors, automation, and environmental awareness by designing a smart waste bin model.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Environment</span></div></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/smart-water-tap.jpg" alt="Smart Water Tap Arduino project" />
+            <div class="project-body"><h3>Smart Water Tap</h3><p>A water-saving Arduino project that uses sensing and automation to model a smart tap system for real-life conservation applications.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Automation</span><span class="tag">Water Saving</span></div></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/heartbeats-count-device.jpg" alt="Heartbeats Count Device Arduino project" />
+            <div class="project-body"><h3>Heartbeats Count Device</h3><p>A health-themed electronics project that introduces students to sensor data, measurement, and technology used in monitoring systems.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Data</span><span class="tag">Health Tech</span></div></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/smart-school-bell.jpg" alt="Smart School Bell Arduino project" />
+            <div class="project-body"><h3>Smart School Bell</h3><p>A school-based automation challenge where students connect timing, outputs, and logic to model a useful real-life system.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Timing</span><span class="tag">School System</span></div></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/biometric-attendance-machine.jpg" alt="Bio-metric Attendance Machine Arduino project" />
+            <div class="project-body"><h3>Bio-metric Attendance Machine</h3><p>An Arduino attendance prototype that demonstrates how technology can support school organization, identity checking, and digital systems.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Biometric</span><span class="tag">School Tech</span></div></div>
+          </article>
+          <article class="project-card">
+            <img src="assets/spirograph-wedo.jpg" alt="Spirograph Wedo 2.0 robotics project" />
+            <div class="project-body"><h3>The Spirograph</h3><p>A Wedo 2.0 robotics project where students explore motion, gears, patterns, creativity, and the connection between engineering and art.</p><div class="tags"><span class="tag">Wedo 2.0</span><span class="tag">Robotics</span><span class="tag">Design</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="resources">
+      <div class="container">
+        <div class="banner">
+          <div>
+            <h2>Resources for Teachers and Schools</h2>
+            <p>
+              I create STEM and Arduino resources that are easy to use, classroom-friendly, and designed to help students learn by doing.
+              My materials support teachers with clear instructions, student worksheets, project steps, reflection questions, and practical extensions.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://www.teacherspayteachers.com/store/math-o-tronics" target="_blank" rel="noopener">Visit TpT Store</a>
+            <a class="btn btn-secondary" href="https://www.youtube.com/@MosaicClips" target="_blank" rel="noopener">Visit YouTube</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Contact</h2>
+          <p>For STEM workshops, school collaboration, Arduino curriculum resources, or educational projects, feel free to contact me.</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-item" href="mailto:A.Abdullah1111@hotmail.com"><small>Email</small><strong>A.Abdullah1111@hotmail.com</strong></a>
+          <a class="contact-item" href="https://www.teacherspayteachers.com/store/math-o-tronics" target="_blank" rel="noopener"><small>TpT Store</small><strong>Math-O-Tronics</strong></a>
+          <a class="contact-item" href="https://www.youtube.com/@MosaicClips" target="_blank" rel="noopener"><small>YouTube</small><strong>@MosaicClips</strong></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="container">© 2026 Ahmad Abdullah. STEM Education • Mathematics • Arduino Learning</div></footer>
+</body>
+</html>
