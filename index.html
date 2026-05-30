@@ -89,10 +89,23 @@
 
     footer { background: var(--navy); color: #dcebf4; padding: 30px 0; text-align: center; font-size: 0.92rem; }
 
+
+    .resource-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .resource-card { background: var(--white); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .resource-thumb { background: #eef5f8; padding: 12px; border-bottom: 1px solid var(--line); }
+    .resource-thumb img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; object-position: top center; border-radius: 15px; box-shadow: 0 10px 22px rgba(15, 39, 66, 0.14); }
+    .resource-body { padding: 22px; display: flex; flex-direction: column; flex: 1; }
+    .resource-body h3 { color: var(--navy); font-size: 1.14rem; margin-bottom: 4px; line-height: 1.25; }
+    .resource-subtitle { color: var(--teal); font-weight: 800; font-size: 0.92rem; margin-bottom: 12px; }
+    .resource-body p { color: var(--gray); font-size: 0.95rem; margin-bottom: 16px; flex: 1; }
+    .resource-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px; }
+    .btn-outline { background: var(--white); color: var(--navy); border: 1px solid var(--line); }
+    .resource-note { margin-top: 18px; color: var(--gray); font-size: 0.95rem; text-align: center; }
+
     @media (max-width: 980px) {
       nav { display: none; }
       .hero-grid, .about-grid, .banner { grid-template-columns: 1fr; }
-      .cards, .project-grid, .contact-grid { grid-template-columns: 1fr; }
+      .cards, .project-grid, .resource-grid, .contact-grid { grid-template-columns: 1fr; }
       .section-heading { display: block; }
       .section-heading p { margin-top: 12px; }
     }
@@ -106,6 +119,7 @@
         <a href="#about">About</a>
         <a href="#expertise">Expertise</a>
         <a href="#projects">Projects</a>
+        <a href="#resource-previews">Previews</a>
         <a href="#resources">Resources</a>
         <a href="#contact">Contact</a>
       </nav>
@@ -231,6 +245,103 @@
             <div class="project-body"><h3>Automatic Pet Feeder</h3><p>A practical Arduino timing and servo-control project that models an automatic food dispenser, helping students explore scheduling, mechanisms, and useful home automation.</p><div class="tags"><span class="tag">Arduino</span><span class="tag">Servo Motor</span><span class="tag">Home Automation</span></div></div>
           </article>
         </div>
+      </div>
+    </section>
+
+
+    <section id="resource-previews">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Resource Previews</h2>
+          <p>Preview selected Math-O-Tronics classroom resources, including Arduino curriculum units, STEM + math labs, sensor activities, and a free starter lesson.</p>
+        </div>
+        <div class="resource-grid">
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/arduino-beginner-project-pack.jpg" alt="Arduino Beginner Project Pack preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Arduino Beginner Project Pack</h3>
+              <div class="resource-subtitle">Premium STEM Curriculum Edition</div>
+              <p>A beginner-friendly Arduino curriculum for Grades 5–9 with readiness lessons, hands-on projects, student worksheets, teacher support, assessments, and a capstone challenge.</p>
+              <div class="tags"><span class="tag">Grades 5–9</span><span class="tag">Arduino</span><span class="tag">Curriculum</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/arduino-beginner-project-pack-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/arduino-intermediate-stem-curriculum.jpg" alt="Arduino Intermediate STEM Curriculum preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Arduino Intermediate STEM Curriculum</h3>
+              <div class="resource-subtitle">4-Week Arduino Unit</div>
+              <p>A Level 2 Arduino STEM unit for Grades 5–8 focused on sensors, automation, coding logic, engineering challenges, and a final capstone project.</p>
+              <div class="tags"><span class="tag">Grades 5–8</span><span class="tag">4-Week Unit</span><span class="tag">STEM</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/arduino-intermediate-stem-curriculum-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/arduino-light-sensor-fractions-ratios-lab.jpg" alt="Arduino Light Sensor preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Arduino Light Sensor</h3>
+              <div class="resource-subtitle">Fractions &amp; Ratios Lab</div>
+              <p>A STEM + math lab where students collect light sensor data, convert readings, compare ratios, and connect Arduino measurements to fractions and proportional reasoning.</p>
+              <div class="tags"><span class="tag">Grades 6–7</span><span class="tag">Math + STEM</span><span class="tag">Ratios</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/arduino-light-sensor-fractions-ratios-lab-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/arduino-sensors-lab-pack.jpg" alt="Arduino Sensors Lab Pack preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Arduino Sensors Lab Pack</h3>
+              <div class="resource-subtitle">5 Sensor Experiments</div>
+              <p>A hands-on Arduino sensor pack with light, temperature, ultrasonic distance, push button, and potentiometer labs for STEM classrooms and makerspaces.</p>
+              <div class="tags"><span class="tag">Grades 5–9</span><span class="tag">Sensors</span><span class="tag">Lab Pack</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/arduino-sensors-lab-pack-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/arduino-temperature-logger.jpg" alt="Arduino Temperature Logger preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Arduino Temperature Logger</h3>
+              <div class="resource-subtitle">Statistics &amp; Graphing Lab</div>
+              <p>A real-data math and STEM lab where students use Arduino temperature readings to explore mean, median, mode, range, graphing, and data interpretation.</p>
+              <div class="tags"><span class="tag">Grades 6–8</span><span class="tag">Statistics</span><span class="tag">Graphing</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/arduino-temperature-logger-statistics-graphing-lab-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+          <article class="resource-card">
+            <div class="resource-thumb">
+              <img src="assets/resource-thumbnails/free-arduino-starter-activity.jpg" alt="Free Arduino Starter Activity preview thumbnail" />
+            </div>
+            <div class="resource-body">
+              <h3>Free Arduino Starter Activity</h3>
+              <div class="resource-subtitle">Blinking LED + Student Worksheet</div>
+              <p>A free introductory Arduino lesson that helps students build their first LED circuit, upload a simple program, and connect coding to physical output.</p>
+              <div class="tags"><span class="tag">Freebie</span><span class="tag">Grades 5–8</span><span class="tag">Beginner</span></div>
+              <div class="resource-actions">
+                <a class="btn btn-primary" href="assets/resources/free-arduino-starter-activity-blinking-led.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <p class="resource-note">These previews are provided to help schools, robotics clubs, and teachers explore the style, structure, and classroom value of my resources.</p>
       </div>
     </section>
 
