@@ -1,0 +1,1196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- =========================
+       PAGE TITLE / SEO
+       ========================= -->
+  <title>Ahmad Abdullah | Robotics, STEM & Fabrication Instructor</title>
+  <meta name="description" content="Portfolio of Ahmad Abdullah, Robotics, STEM and Fabrication Instructor specializing in Arduino, electronics, robotics, CNC, laser fabrication, CAD, digital fabrication and hands-on technical education.">
+
+  <style>
+    :root{
+      --navy:#0f2742;
+      --blue:#123b63;
+      --teal:#10a6a6;
+      --teal-light:#e7f7f7;
+      --light:#f5f8fb;
+      --white:#ffffff;
+      --gray:#5f6f7f;
+      --dark:#1d2935;
+      --line:#d9e4ec;
+      --shadow:0 18px 45px rgba(15,39,66,.12);
+      --radius:22px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      line-height:1.6;
+      color:var(--dark);
+      background:var(--light);
+    }
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+
+    .container{width:min(1120px,92%);margin:auto}
+
+    /* =========================
+       NAVIGATION
+       ========================= */
+    header{
+      background:rgba(255,255,255,.95);
+      backdrop-filter:blur(12px);
+      border-bottom:1px solid var(--line);
+      position:sticky;
+      top:0;
+      z-index:50;
+    }
+    .nav{
+      min-height:74px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+    .brand{
+      font-weight:800;
+      font-size:1.05rem;
+      color:var(--navy);
+    }
+    .brand span{color:var(--teal)}
+    nav{
+      display:flex;
+      align-items:center;
+      gap:22px;
+      font-size:.94rem;
+      color:var(--gray);
+    }
+    nav a:hover{color:var(--teal)}
+
+    .mobile-menu-btn{
+      display:none;
+      background:none;
+      border:0;
+      color:var(--navy);
+      font-size:1.85rem;
+      line-height:1;
+      cursor:pointer;
+      padding:8px 4px;
+      font-family:Arial,Helvetica,sans-serif;
+    }
+    .mobile-menu-btn:focus-visible{
+      outline:2px solid var(--teal);
+      outline-offset:4px;
+      border-radius:6px;
+    }
+
+    /* =========================
+       HERO
+       ========================= */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      padding:86px 0 72px;
+      background:
+        radial-gradient(circle at top right,rgba(16,166,166,.20),transparent 35%),
+        linear-gradient(135deg,var(--navy),var(--blue));
+      color:white;
+    }
+    .hero-grid{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:46px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      padding:8px 14px;
+      border-radius:999px;
+      font-size:.9rem;
+      margin-bottom:22px;
+    }
+    h1{
+      font-size:clamp(2.6rem,6vw,5rem);
+      line-height:1.02;
+      margin-bottom:20px;
+      letter-spacing:-1.5px;
+    }
+    .hero h2{
+      font-size:clamp(1.15rem,2vw,1.6rem);
+      font-weight:500;
+      color:#d7f5f4;
+      margin-bottom:22px;
+    }
+    .hero p{
+      font-size:1.08rem;
+      color:#eaf3f8;
+      max-width:700px;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:32px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      min-height:46px;
+      padding:0 20px;
+      border-radius:999px;
+      font-weight:700;
+    }
+    .btn-primary{background:var(--teal);color:white}
+    .btn-secondary{
+      background:rgba(255,255,255,.12);
+      color:white;
+      border:1px solid rgba(255,255,255,.25);
+    }
+    .hero-photo-card{
+      background:rgba(255,255,255,.11);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:30px;
+      padding:14px;
+      box-shadow:0 20px 40px rgba(0,0,0,.13);
+    }
+    .hero-photo-card img{
+      width:100%;
+      aspect-ratio:1/1;
+      object-fit:contain;
+      object-position:center;
+      border-radius:22px;
+      background:rgba(255,255,255,.06);
+    }
+
+    /* =========================
+       GENERAL SECTIONS
+       ========================= */
+    section{padding:74px 0}
+    .section-heading{
+      display:flex;
+      justify-content:space-between;
+      gap:24px;
+      align-items:end;
+      margin-bottom:34px;
+    }
+    .section-heading h2{
+      color:var(--navy);
+      font-size:clamp(1.9rem,4vw,2.7rem);
+      line-height:1.12;
+    }
+    .section-heading p{
+      color:var(--gray);
+      max-width:560px;
+    }
+
+    /* =========================
+       ABOUT
+       ========================= */
+    .about-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:28px;
+    }
+    .profile-box{
+      background:var(--navy);
+      color:white;
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .profile-box h3{
+      font-size:1.45rem;
+      margin-bottom:10px;
+    }
+    .profile-box p{color:#dcebf4}
+    .profile-tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:18px;
+    }
+    .profile-tag{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.18);
+      border-radius:999px;
+      padding:6px 10px;
+      font-size:.85rem;
+    }
+    .about-text{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:30px;
+      box-shadow:var(--shadow);
+    }
+    .about-text p+p{margin-top:16px}
+
+    /* =========================
+       EXPERTISE
+       ========================= */
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .skill-card-image{
+      width:100%;
+      height:150px;
+      object-fit:contain;
+      background:#f3f5f7;
+      border-radius:14px;
+      margin-bottom:18px;
+      display:block;
+    }
+    .card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+      box-shadow:var(--shadow);
+    }
+    .icon{
+      width:46px;height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:var(--teal-light);
+      color:var(--teal);
+      font-size:1.35rem;
+      margin-bottom:18px;
+    }
+    .card h3{color:var(--navy);margin-bottom:10px}
+    .card p{color:var(--gray);font-size:.98rem}
+
+    /* =========================
+       PROJECTS
+       ========================= */
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .project-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .project-image{
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#eaf1f5;
+      aspect-ratio:4/3;
+      overflow:hidden;
+    }
+    .project-image img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      object-position:center;
+    }
+    .placeholder{
+      height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      padding:25px;
+      color:var(--gray);
+      font-size:.9rem;
+    }
+    .placeholder strong{
+      display:block;
+      color:var(--navy);
+      font-size:1rem;
+      margin-bottom:6px;
+    }
+    .project-body{padding:22px}
+    .project-body h3{
+      color:var(--navy);
+      font-size:1.18rem;
+      margin-bottom:9px;
+    }
+    .project-body p{
+      color:var(--gray);
+      margin-bottom:16px;
+      font-size:.95rem;
+    }
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+    }
+    .tag{
+      background:#eef5f8;
+      color:var(--blue);
+      padding:6px 10px;
+      border-radius:999px;
+      font-size:.82rem;
+      font-weight:700;
+    }
+
+    /* =========================
+       RESOURCES
+       ========================= */
+    .resource-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:22px;
+    }
+    .resource-card{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      overflow:hidden;
+      box-shadow:var(--shadow);
+    }
+    .resource-thumb{
+      background:#eef5f8;
+      padding:12px;
+    }
+    .resource-thumb img{
+      width:100%;
+      aspect-ratio:3/4;
+      object-fit:contain;
+      object-position:center;
+      border-radius:15px;
+      background:white;
+    }
+    .resource-body{padding:22px}
+    .resource-body h3{
+      color:var(--navy);
+      font-size:1.14rem;
+      margin-bottom:4px;
+    }
+    .resource-subtitle{
+      color:var(--teal);
+      font-weight:800;
+      font-size:.92rem;
+      margin-bottom:12px;
+    }
+    .resource-body p{
+      color:var(--gray);
+      font-size:.95rem;
+    }
+
+    .resource-actions{
+      margin-top:18px;
+    }
+    .btn-resource{
+      background:var(--navy);
+      color:white;
+      min-height:42px;
+      padding:0 16px;
+      font-size:.9rem;
+    }
+    .btn-resource:hover{
+      background:var(--teal);
+    }
+    .resource-note{
+      margin-top:28px;
+      background:var(--teal-light);
+      border:1px solid #c9eeee;
+      border-radius:18px;
+      padding:20px 22px;
+      color:var(--gray);
+    }
+    .resource-note strong{color:var(--navy)}
+    .resource-store-action{
+      margin-top:22px;
+      text-align:center;
+    }
+    /* =========================
+       CONTACT
+       ========================= */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+    .contact-item{
+      background:white;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:22px;
+      box-shadow:var(--shadow);
+    }
+    .contact-item small{
+      color:var(--gray);
+      display:block;
+      margin-bottom:6px;
+    }
+    .contact-item strong{color:var(--navy)}
+
+    footer{
+      background:var(--navy);
+      color:#dcebf4;
+      padding:30px 0;
+      text-align:center;
+      font-size:.92rem;
+    }
+
+    @media(max-width:980px){
+      .mobile-menu-btn{display:block}
+
+      nav{
+        display:none;
+        position:absolute;
+        top:74px;
+        left:0;
+        width:100%;
+        background:rgba(255,255,255,.98);
+        backdrop-filter:blur(12px);
+        border-bottom:1px solid var(--line);
+        box-shadow:0 14px 30px rgba(15,39,66,.12);
+        flex-direction:column;
+        align-items:stretch;
+        gap:0;
+      }
+
+      nav.active{display:flex}
+
+      nav a{
+        display:block;
+        padding:15px 4%;
+        border-bottom:1px solid var(--line);
+        font-size:1rem;
+      }
+
+      nav a:last-child{border-bottom:0}
+
+      .hero-grid,.about-grid{grid-template-columns:1fr}
+      .cards,.project-grid,.resource-grid,.contact-grid{grid-template-columns:1fr}
+      .section-heading{display:block}
+      .section-heading p{margin-top:12px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#top">Ahmad <span>Abdullah</span></a>
+    <nav id="mainNav">
+      <a href="#about">About</a>
+      <a href="#expertise">Expertise</a>
+      <a href="#fabrication">Fabrication</a>
+      <a href="#robotics">Robotics</a>
+      <a href="#resources">Resources</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <button class="mobile-menu-btn" id="mobileMenuBtn" type="button"
+            aria-label="Open navigation menu" aria-expanded="false" aria-controls="mainNav">
+      ☰
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- =========================================================
+       HERO
+       PHOTO TO ADD:
+       assets/ahmad-abdullah.jpg
+       Recommended: professional photo, square, clear face.
+       ========================================================= -->
+  <section class="hero">
+    <div class="container hero-grid">
+
+      <div>
+        <div class="eyebrow">Robotics • STEM • Digital Fabrication • Electronics</div>
+
+        <h1>Ahmad Abdullah</h1>
+
+        <h2>Robotics, STEM & Fabrication Instructor</h2>
+
+        <p>
+          I design and deliver hands-on learning experiences that combine robotics,
+          electronics, programming, digital fabrication, CAD, and engineering.
+          My work helps learners move from ideas and digital designs to physical
+          prototypes through practical projects, experimentation, troubleshooting,
+          and problem solving.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#fabrication">View Fabrication Projects</a>
+          <a class="btn btn-secondary" href="#robotics">View Robotics Projects</a>
+          <a class="btn btn-secondary" href="#contact">Contact Me</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-card">
+        <!-- ADD YOUR PHOTO HERE -->
+        <img src="assets/ahmad-abdullah.jpg"
+             alt="Ahmad Abdullah - Robotics, STEM and Fabrication Instructor">
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       ABOUT
+       ========================= -->
+  <section id="about">
+    <div class="container about-grid">
+
+      <div class="profile-box">
+        <h3>About Ahmad</h3>
+
+        <p>
+          Robotics, STEM and technical educator focused on making learning practical
+          through electronics, CAD, CNC, robotics, programming and project-based
+          engineering.
+        </p>
+
+        <div class="profile-tags">
+          <span class="profile-tag">Digital Fabrication</span>
+          <span class="profile-tag">Arduino</span>
+          <span class="profile-tag">Robotics</span>
+          <span class="profile-tag">Electronics</span>
+          <span class="profile-tag">CAD</span>
+          <span class="profile-tag">STEM Training</span>
+        </div>
+      </div>
+
+      <div class="about-text">
+
+        <p>
+          I am a STEM and technical educator with extensive experience combining
+          engineering, coding, electronics, robotics, mathematics, and hands-on
+          project learning.
+        </p>
+
+        <p>
+          My practical work includes Arduino and ESP32/ESP8266 systems, sensors,
+          motors, robotics, CNC machines, laser fabrication, CAD and 3D design,
+          electronics assembly, soldering, PCB design, IoT, and technical
+          prototyping.
+        </p>
+
+        <p>
+          I believe learners develop strong technical skills when they build,
+          test, troubleshoot, improve, and present real projects. My training
+          approach therefore combines clear instruction with guided practice,
+          experimentation, and project-based learning.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       EXPERTISE
+       ========================= -->
+  <section id="expertise">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>What I Do</h2>
+        <p>
+          My work connects digital design, electronics, fabrication, robotics,
+          programming and hands-on technical education.
+        </p>
+      </div>
+
+      <div class="cards">
+
+        <article class="card">
+          <div class="icon">⚙</div>
+          <h3>Digital Fabrication</h3>
+          <p>
+            CNC, laser fabrication, CAD/3D design, prototyping, machine control,
+            ESTLCAM, Inkscape/SVG and practical fabrication workflows.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">🤖</div>
+          <h3>Robotics & Electronics</h3>
+          <p>
+            Arduino, ESP32/ESP8266, microcontrollers, sensors, motors, actuators,
+            robotics kits, electronics, soldering and troubleshooting.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="icon">💡</div>
+          <h3>STEM & Technical Training</h3>
+          <p>
+            Project-based learning, curriculum development, learner mentoring,
+            technical demonstrations, practical challenges and engineering design.
+          </p>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       FABRICATION & ENGINEERING PROJECTS
+       ADD YOUR OWN PHOTOS:
+       Each project has a clearly marked image filename.
+       Recommended: 1200 x 900 px or similar landscape photos.
+       ========================================================= -->
+  <section id="fabrication">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Fabrication & Engineering Projects</h2>
+        <p>
+          Selected real-world work demonstrating machine building, CNC operation,
+          CAD-to-part workflows, electronics integration, laser fabrication and measurement.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- PROJECT 1 -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ADD PHOTO: assets/cnc-machine.jpg
+                 Show the complete CNC machine. -->
+            <img src="assets/cnc-machine.jpg" alt="Arduino-controlled CNC machine built by Ahmad Abdullah">
+          </div>
+          <div class="project-body">
+            <h3>Arduino-Controlled CNC Machine</h3>
+            <p>
+              Built and successfully operated a CNC machine using Arduino Nano,
+              3 N·m motors, motor drivers and ESTLCAM. The project involved
+              machine integration, motion control, configuration, testing and
+              practical machining.
+            </p>
+            <div class="tags">
+              <span class="tag">CNC</span>
+              <span class="tag">Arduino Nano</span>
+              <span class="tag">ESTLCAM</span>
+              <span class="tag">Motors</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 2 -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ADD PHOTO: assets/laser-cnc.jpg
+                 Show the laser CNC machine and, if possible, a working result. -->
+            <img src="assets/laser-cnc-machine.jpg" alt="Laser CNC fabrication machine">
+          </div>
+          <div class="project-body">
+            <h3>Laser CNC Machine</h3>
+            <p>
+              Built a functional laser CNC machine for a client, gaining practical
+              experience with laser modules, motion control, machine integration,
+              configuration and troubleshooting.
+            </p>
+            <div class="tags">
+              <span class="tag">Laser</span>
+              <span class="tag">CNC</span>
+              <span class="tag">Motion Control</span>
+              <span class="tag">Fabrication</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 3 -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ADD PHOTO: assets/cad-design.jpg
+                 Show a Fusion 360 / Inventor / AutoCAD model. -->
+            <img src="assets/cad-to-part.jpg" alt="CAD design compared with manufactured part">
+          </div>
+          <div class="project-body">
+            <h3>CAD & 3D Design</h3>
+            <p>
+              Practical experience creating technical drawings, component designs and
+              fabrication-ready layouts using AutoCAD, Fusion 360, Autodesk Inventor and Tinkercad.
+            </p>
+            <div class="tags">
+              <span class="tag">Fusion 360</span>
+              <span class="tag">Inventor</span>
+              <span class="tag">AutoCAD</span>
+              <span class="tag">Tinkercad</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 4 -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ADD PHOTO: assets/electronics-pcb.jpg
+                 Show a PCB, electronics prototype, soldering or circuit. -->
+            <img src="assets/cnc-control-electronics.jpg" alt="CNC control electronics and stepper drivers">
+          </div>
+          <div class="project-body">
+            <h3>Electronics & PCB Prototyping</h3>
+            <p>
+              Designed circuits and PCBs using Proteus and Eagle and developed
+              practical electronics prototypes involving wiring, soldering,
+              sensors, motors and microcontrollers.
+            </p>
+            <div class="tags">
+              <span class="tag">PCB</span>
+              <span class="tag">Proteus</span>
+              <span class="tag">Eagle</span>
+              <span class="tag">Soldering</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 5 -->
+        <article class="project-card">
+          <div class="project-image">
+            <!-- ADD PHOTO: assets/rc-aircraft.jpg
+                 Show one of your RC aircraft. -->
+            <img src="assets/rc-aircraft.jpg" alt="RC aircraft built by Ahmad Abdullah">
+          </div>
+          <div class="project-body">
+            <h3>RC Aircraft & Electromechanical Systems</h3>
+            <p>
+              Built RC aircraft using servos, brushless motors and FlySky radio
+              control systems, developing practical experience with motors,
+              control systems and mechanical integration.
+            </p>
+            <div class="tags">
+              <span class="tag">RC</span>
+              <span class="tag">Brushless Motors</span>
+              <span class="tag">Servos</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 6 -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/windmill.png" alt="Vertical-axis windmill prototype built by Ahmad Abdullah">
+          </div>
+          <div class="project-body">
+            <h3>Vertical-Axis Windmill</h3>
+            <p>
+              Designed and built a vertical-axis windmill as a practical
+              electromechanical project combining mechanical construction,
+              energy concepts and prototyping.
+            </p>
+            <div class="tags">
+              <span class="tag">Mechanical</span>
+              <span class="tag">Energy</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- PROJECT 7 -->
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/robotic-arm.jpg" alt="3D-printed robotic arm prototype built by Ahmad Abdullah">
+          </div>
+          <div class="project-body">
+            <h3>3D-Printed Robotic Arm Prototype</h3>
+            <p>
+              Developed a functional robotic arm prototype using 3D-printed mechanical
+              components, geared joints and servo motors. The project demonstrates
+              hands-on mechanical prototyping, assembly and the integration of digital
+              fabrication with robotics and motion control.
+            </p>
+            <div class="tags">
+              <span class="tag">3D Printing</span>
+              <span class="tag">Mechanical Design</span>
+              <span class="tag">Servo Motors</span>
+              <span class="tag">Robotics</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/cnc-software-toolpath.jpg" alt="ESTLCAM CNC toolpath and controller interface">
+          </div>
+          <div class="project-body">
+            <h3>CNC Toolpaths & Machine Control</h3>
+            <p>
+              Generated and executed CNC toolpaths using ESTLCAM, working with
+              feed rates, spindle speed, coordinates, G-code and machine control.
+            </p>
+            <div class="tags">
+              <span class="tag">ESTLCAM</span>
+              <span class="tag">G-code</span>
+              <span class="tag">Toolpaths</span>
+              <span class="tag">CNC Control</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/digital-fabrication-overview.jpg" alt="Digital fabrication overview">
+          </div>
+          <div class="project-body">
+            <h3>Digital Fabrication Workflow</h3>
+            <p>
+              From CAD design and measurement to machine setup, CNC fabrication,
+              laser work and finished physical prototypes.
+            </p>
+            <div class="tags">
+              <span class="tag">CAD</span>
+              <span class="tag">CNC</span>
+              <span class="tag">Laser</span>
+              <span class="tag">Prototyping</span>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       ROBOTICS & ARDUINO PROJECTS
+       ========================================================= -->
+  <section id="robotics">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Robotics & Arduino Projects</h2>
+        <p>
+          Hands-on projects combining coding, electronics, sensors, automation,
+          robotic mechanisms, servo control and real-world problem solving.
+        </p>
+      </div>
+
+      <div class="project-grid">
+
+        <!-- ADD/REPLACE PHOTOS USING THE FILENAMES BELOW -->
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/smart-bin.jpg" alt="Arduino Smart Bin project">
+          </div>
+          <div class="project-body">
+            <h3>Smart Bin</h3>
+            <p>Arduino automation project using sensing and servo control.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Automation</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/smart-water-tap.jpg" alt="Arduino Smart Water Tap">
+          </div>
+          <div class="project-body">
+            <h3>Smart Water Tap</h3>
+            <p>Hands-free water-saving system using distance sensing and automation.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Ultrasonic</span><span class="tag">Automation</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/heartbeats-count-device.jpg" alt="Arduino Heartbeats Count Device">
+          </div>
+          <div class="project-body">
+            <h3>Heartbeats Count Device</h3>
+            <p>Sensor-based project introducing measurement, data and monitoring systems.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Sensors</span><span class="tag">Data</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/smart-school-bell.jpg" alt="Arduino Smart School Bell">
+          </div>
+          <div class="project-body">
+            <h3>Smart School Bell</h3>
+            <p>School automation project combining timing, logic and outputs.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Automation</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/biometric-attendance-machine.jpg" alt="Arduino Biometric Attendance Machine">
+          </div>
+          <div class="project-body">
+            <h3>Biometric Attendance Machine</h3>
+            <p>Arduino-based attendance prototype combining biometric identification and digital systems.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Biometric</span><span class="tag">School Tech</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/spirograph-wedo.jpg" alt="LEGO WeDo 2.0 Spirograph">
+          </div>
+          <div class="project-body">
+            <h3>LEGO WeDo 2.0 Spirograph</h3>
+            <p>Robotics activity combining motion, gears, patterns, creativity and engineering.</p>
+            <div class="tags"><span class="tag">LEGO</span><span class="tag">WeDo 2.0</span><span class="tag">Robotics</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/smart-plant-watering-system.jpg" alt="Smart Plant Watering System">
+          </div>
+          <div class="project-body">
+            <h3>Smart Plant Watering System</h3>
+            <p>Soil-moisture sensing and automatic water control.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">Sensors</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/automatic-hand-sanitizer-dispenser.jpg" alt="Automatic Hand Sanitizer Dispenser">
+          </div>
+          <div class="project-body">
+            <h3>Automatic Hand Sanitizer Dispenser</h3>
+            <p>Distance sensing and motor control applied to an everyday problem.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Ultrasonic</span><span class="tag">Motor</span></div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <img src="assets/smart-parking-sensor.jpg" alt="Smart Parking Sensor">
+          </div>
+          <div class="project-body">
+            <h3>Smart Parking Sensor</h3>
+            <p>Ultrasonic distance measurement with LED, buzzer and display feedback.</p>
+            <div class="tags"><span class="tag">Arduino</span><span class="tag">Distance</span><span class="tag">Safety</span></div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CURRICULUM / TRAINING
+       ========================= -->
+  <section id="resources">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>STEM Curriculum & Educational Resources</h2>
+        <p>
+          I develop structured, classroom-ready STEM and Arduino resources that combine
+          technical instruction, hands-on projects, student worksheets, assessments,
+          data activities and project-based learning.
+        </p>
+      </div>
+
+      <div class="resource-grid">
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/arduino-beginner-project-pack.jpg" alt="Arduino Beginner Project Pack preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Arduino Beginner Project Pack</h3>
+            <div class="resource-subtitle">Premium STEM Curriculum · Grades 5–9</div>
+            <p>A beginner-friendly Arduino curriculum with readiness lessons, hands-on projects, student worksheets, teacher support, assessments and a capstone challenge.</p>
+            <div class="tags">
+              <span class="tag">Arduino</span><span class="tag">Curriculum</span><span class="tag">7 Projects</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/arduino-beginner-project-pack-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/arduino-intermediate-stem-curriculum.jpg" alt="Arduino Intermediate STEM Curriculum preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Arduino Intermediate STEM Curriculum</h3>
+            <div class="resource-subtitle">Level 2 · 4-Week Arduino Unit</div>
+            <p>A structured STEM unit focused on sensors, automation, coding logic, engineering challenges and a final capstone project.</p>
+            <div class="tags">
+              <span class="tag">Grades 5–8</span><span class="tag">Sensors</span><span class="tag">Automation</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/arduino-intermediate-stem-curriculum-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/arduino-light-sensor-fractions-ratios-lab.jpg" alt="Arduino Light Sensor Fractions and Ratios Lab preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Arduino Light Sensor</h3>
+            <div class="resource-subtitle">Fractions & Ratios Lab</div>
+            <p>A STEM + mathematics lab where students collect light-sensor data, compare ratios and connect Arduino measurements to fractions and proportional reasoning.</p>
+            <div class="tags">
+              <span class="tag">Grades 6–7</span><span class="tag">Math + STEM</span><span class="tag">Ratios</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/arduino-light-sensor-fractions-ratios-lab-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/arduino-sensors-lab-pack.jpg" alt="Arduino Sensors Lab Pack preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Arduino Sensors Lab Pack</h3>
+            <div class="resource-subtitle">5 Sensor Experiments · Grades 5–9</div>
+            <p>A hands-on sensor pack covering light, temperature, ultrasonic distance, push buttons and potentiometers for STEM classrooms and makerspaces.</p>
+            <div class="tags">
+              <span class="tag">Sensors</span><span class="tag">Electronics</span><span class="tag">Lab Pack</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/arduino-sensors-lab-pack-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/arduino-temperature-logger.jpg" alt="Arduino Temperature Logger Statistics and Graphing Lab preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Arduino Temperature Logger</h3>
+            <div class="resource-subtitle">Statistics & Graphing Lab · Grades 6–8</div>
+            <p>A real-data mathematics and STEM lab using Arduino temperature readings to explore mean, median, mode, range, graphing and data interpretation.</p>
+            <div class="tags">
+              <span class="tag">Statistics</span><span class="tag">Graphing</span><span class="tag">Arduino</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/arduino-temperature-logger-statistics-graphing-lab-preview.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="resource-card">
+          <div class="resource-thumb">
+            <img src="resource-thumbnails/free-arduino-starter-activity.jpg" alt="Free Arduino Starter Activity preview thumbnail">
+          </div>
+          <div class="resource-body">
+            <h3>Free Arduino Starter Activity</h3>
+            <div class="resource-subtitle">Blinking LED + Student Worksheet</div>
+            <p>A free introductory Arduino lesson helping students build their first LED circuit, upload a simple program and connect coding to physical output.</p>
+            <div class="tags">
+              <span class="tag">Freebie</span><span class="tag">Grades 5–8</span><span class="tag">Beginner</span>
+            </div>
+            <div class="resource-actions">
+              <a class="btn btn-resource" href="resources/free-arduino-starter-activity-blinking-led.pdf" target="_blank" rel="noopener">View Preview PDF</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="resource-note">
+        <strong>Math-O-Tronics</strong> — STEM and mathematics resources integrating Arduino, electronics, data,
+        engineering and hands-on learning. Selected previews are included to demonstrate curriculum development
+        and classroom-ready educational design.
+      </div>
+
+      <div class="resource-store-action">
+        <a class="btn btn-resource" href="https://www.teacherspayteachers.com/store/math-o-tronics" target="_blank" rel="noopener">Visit Math-O-Tronics on Teachers Pay Teachers</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================
+       CONTACT
+       ========================= -->
+  <section id="contact">
+    <div class="container">
+
+      <div class="section-heading">
+        <h2>Contact</h2>
+        <p>
+          For STEM workshops, robotics training, fabrication projects,
+          educational collaboration or technical training.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+
+        <a class="contact-item" href="mailto:a.abdullah1111@hotmail.com">
+          <small>Email</small>
+          <strong>a.abdullah1111@hotmail.com</strong>
+        </a>
+
+        <a class="contact-item" href="tel:+96170064796">
+          <small>Phone</small>
+          <strong>+961 70 064 796</strong>
+        </a>
+
+        <a class="contact-item" href="https://mathotronics.github.io/ahmad-abdullah-portfolio/">
+          <small>Portfolio</small>
+          <strong>Ahmad Abdullah</strong>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<script>
+  (function () {
+    const menuButton = document.getElementById("mobileMenuBtn");
+    const nav = document.getElementById("mainNav");
+
+    if (!menuButton || !nav) return;
+
+    function closeMenu() {
+      nav.classList.remove("active");
+      menuButton.textContent = "☰";
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Open navigation menu");
+    }
+
+    menuButton.addEventListener("click", function () {
+      const isOpen = nav.classList.toggle("active");
+      menuButton.textContent = isOpen ? "✕" : "☰";
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Close navigation menu" : "Open navigation menu");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeMenu);
+    });
+
+    window.addEventListener("resize", function () {
+      if (window.innerWidth > 980) closeMenu();
+    });
+  })();
+</script>
+
+<footer>
+  <div class="container">
+    © 2026 Ahmad Abdullah · Robotics • STEM • Digital Fabrication • Electronics
+  </div>
+</footer>
+
+</body>
+</html>
